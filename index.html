@@ -6,21 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>document</title>
+    <title>Game</title>
 </head>
   
   <body>
-    <h1>toros y vacas</h1>
-    <form id="codigo-form">
-      <label for="codigo">Codigo secreto:</label>
-      <input type="text" id="codigo" />
-      <button type="submit" id="registrar">ok </button>
-      <label for="adivinar" style="display: hidden;">intente adivinar:</label>
-      <button type="submit" id="adivinar" style="display: hidden;">ok </button>      
+    <h1>Bulls and Cows</h1>
+    <form id="code-form">
+      <label for="code">Secret Code:</label>
+      <input type="text" id="code" />
+      <button type="submit" id="register">ok </button>
+      <label for="guess" style="display: none;">guess:</label>
+      <button type="submit" id="guess" style="display: none;">ok </button>      
     </form>
-    <div id="resultado-suma-div"></div>
-    <br>
-    <div id="resultado-mult-div"></div>
+
 
 
     <script type="module" src="./src/presenter.js"></script>

@@ -1,9 +1,9 @@
-class VacasToros{
+class BullsAndCows{
 
     constructor(){
         this.hiddenCode = ""
         this.guessedCode = ""
-        this.resultado = ""
+        this.result = ""
     }
 
     check_code_isEqual(index1, index2){
@@ -18,7 +18,7 @@ class VacasToros{
 
     correct_guess_number(){
         for(let i =0; i<this.guessedCode.length ; i++){
-            if (this.check_code_isEqual(i,i)) this.resultado += "!";
+            if (this.check_code_isEqual(i,i)) this.result += "!";
         }
     }
 
@@ -26,7 +26,7 @@ class VacasToros{
         for(let i = 0; i<this.guessedCode.length ; i++){
             for(let j = 0; j<this.guessedCode.length ; j++){
                 if ((this.check_code_isEqual(i,j)) && (j != i)) {
-                    this.resultado += "*";
+                    this.result += "*";
                 }
             }
         }
@@ -40,9 +40,9 @@ class VacasToros{
             return "cadenas son de tamaños diferentes"
         this.correct_guess_number()
         this.semicorrect_guess_number()
-        return this.resultado
+        return this.result
     }
 }
-export default VacasToros;
+export default BullsAndCows;
 
 
