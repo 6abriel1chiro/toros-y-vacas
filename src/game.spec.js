@@ -14,4 +14,8 @@ describe("Vacas y toros", () => {
   it("devolvera * por cada numero correcto en posición distinta",() => {
     expect(game.play("21345", "27314")).toEqual("!!**");
   });
+
+  it("evitar cadenas de distintos tamaños",() => {
+    expect(game.play("21345", "24")).toEqual("cadenas son de tamaños diferentes");
+  });
 });
