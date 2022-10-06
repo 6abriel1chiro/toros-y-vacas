@@ -16,6 +16,15 @@ class VacasToros{
         }
     }
 
+    compare_strings(){
+        if(this.hiddenCode.length > this.guessedCode.length){
+            return "la adivinanza es muy corta"
+        }
+        if(this.hiddenCode.length < this.guessedCode.length){
+            return "la adivinanza es muy larga"
+        }
+    }
+
     correct_guess_number(){
         for(let i =0; i<this.guessedCode.length ; i++){
             if (this.check_code_isEqual(i,i)) this.resultado += "!";
@@ -37,7 +46,7 @@ class VacasToros{
         this.hiddenCode = player1Code;
         this.guessedCode = player2Guess;
         if(this.check_string() == false) 
-            return "cadenas son de tamaños diferentes"
+            return this.compare_strings()    
         this.correct_guess_number()
         this.semicorrect_guess_number()
         return this.resultado

@@ -16,6 +16,10 @@ describe("Vacas y toros", () => {
   });
 
   it("evitar cadenas de distintos tamaños",() => {
-    expect(game.play("21345", "24")).toEqual("cadenas son de tamaños diferentes");
+    expect(game.play("21345", "24")).toEqual("la adivinanza es muy corta");
+  });
+
+  it("evitar cadenas de distintos tamaños",() => {
+    expect(game.play("21345", "246846851561")).toEqual("la adivinanza es muy larga");
   });
 });
