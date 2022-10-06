@@ -25,13 +25,13 @@ class BullsAndCows{
         }
     }
 
-    correct_guess_number(){
+    bulls_guess_number(){
         for(let i =0; i<this.guessedCode.length ; i++){
             if (this.check_code_isEqual(i,i)) this.result += "!";
         }
     }
 
-    semicorrect_guess_number(){
+    cows_guess_number(){
         for(let i = 0; i<this.guessedCode.length ; i++){
             for(let j = 0; j<this.guessedCode.length ; j++){
                 if ((this.check_code_isEqual(i,j)) && (j != i)) {
@@ -47,8 +47,8 @@ class BullsAndCows{
         this.guessedCode = player2Guess;
         if(this.check_string() == false) 
             return this.compare_strings()    
-        this.correct_guess_number()
-        this.semicorrect_guess_number()
+        this.bulls_guess_number()
+        this.cows_guess_number()
         return this.result
     }
 }

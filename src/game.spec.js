@@ -15,7 +15,7 @@ describe("Vacas y toros obtener resultado", () => {
     expect(game.play("21345", "27314")).toEqual("!!**");
   });
 });
-
+//  21341 22314 !!****
 
 describe("Vacas y toros controlar tamaño cadena", () => {
   let game
