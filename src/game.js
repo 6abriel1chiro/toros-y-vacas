@@ -46,10 +46,10 @@ class BullsAndCows{
         this.hiddenCode = player1Code;
         this.guessedCode = player2Guess;
         if(this.#check_string() == false) 
-            return this.#compare_strings()    
-        this.#bulls_guess_number()
-        this.#cows_guess_number()
-        return this.result
+            return this.#compare_strings();  
+        this.#bulls_guess_number();
+        this.#cows_guess_number();
+        return this.result;
     }
 }
 export default BullsAndCows;

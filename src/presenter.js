@@ -1,15 +1,38 @@
 import BullsAndCows from "./game";
 
-const secretCode = document.querySelector("#code");
-const guess = document.querySelector("#guess");
-const form = document.querySelector("#sumar-form");
+let secretCode = document.querySelector("#code");
+let guess = document.querySelector("#codeGuess");
+const registerButton = document.querySelector("#register");
+let guessButton = document.querySelector("#guess")
+const resultDiv = document.querySelector("#result")
 
 
-let game = null;
-form.addEventListener("submit", (event) => {
+let game = new BullsAndCows();
+let result = "";
+
+registerButton.addEventListener("click", (event) => {
   event.preventDefault();
 
-  const player1Code = Number.parseInt(secretCode.value);
-  const player2Guess = Number.parseInt(guess.value);
+  if (secretCode.value.trim() != ""){
+    guessButton.disabled = false;
+    guess.disabled = false
+  }
+  else{
+    alert("Ingrese un codigo por favor")
+  }
 
 });
+
+
+guessButton.addEventListener("click", (event)=>{
+  if(guess.value.trim() != "")
+  {
+    let player1Code = secretCode.value;
+    let player2Guess = guess.value;
+    result = game.play(player1Code, player2Guess);
+    resultDiv.innerHTML = "<p>" + "Resultado = " + result + "</p>";
+  }
+  else{
+    alert("Ingrese una adivinanza por favor")
+  }
+})

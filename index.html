@@ -11,17 +11,20 @@
   
   <body>
     <h1>Bulls and Cows</h1>
-    <form id="code-form">
-      <label for="code">Secret Code:</label>
+    <div>
+      <label for="code">Input secret Code:</label>
       <input type="text" id="code"/>
-      <button type="submit" id="register">register </button>
-      <label for="guess">guess:</label>
-      <input type="text" id="code" />
-      <button type="submit" id="guess" disabled>guess </button>      
-    </form>
+      <button type="submit" id="register">register</button>
+    </div>
+    <div>
+      <label for="codeGuess">Input guess:</label>
+      <input type="text" id="codeGuess" disabled = "true"/>
+      <button type="submit" id="guess" disabled = "true">guess</button>      
+    </div>
 
+    <div id="result">
 
-
+    </div>
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
