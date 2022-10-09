@@ -6,17 +6,17 @@ class BullsAndCows{
         this.result = ""
     }
 
-    check_code_isEqual(index1, index2){
+    #check_code_isEqual(index1, index2){
         if(this.hiddenCode[index1] == this.guessedCode[index2]) return true;
     }
 
-    check_string(){
+    #check_string(){
         if(this.hiddenCode.length != this.guessedCode.length){
             return false
         }
     }
 
-    compare_strings(){
+    #compare_strings(){
         if(this.hiddenCode.length > this.guessedCode.length){
             return "la adivinanza es muy corta"
         }
@@ -25,16 +25,16 @@ class BullsAndCows{
         }
     }
 
-    bulls_guess_number(){
+    #bulls_guess_number(){
         for(let i =0; i<this.guessedCode.length ; i++){
-            if (this.check_code_isEqual(i,i)) this.result += "!";
+            if (this.#check_code_isEqual(i,i)) this.result += "!";
         }
     }
 
-    cows_guess_number(){
+    #cows_guess_number(){
         for(let i = 0; i<this.guessedCode.length ; i++){
             for(let j = 0; j<this.guessedCode.length ; j++){
-                if ((this.check_code_isEqual(i,j)) && (j != i)) {
+                if ((this.#check_code_isEqual(i,j)) && (j != i)) {
                     this.result += "*";
                 }
             }
@@ -45,10 +45,10 @@ class BullsAndCows{
     {
         this.hiddenCode = player1Code;
         this.guessedCode = player2Guess;
-        if(this.check_string() == false) 
-            return this.compare_strings()    
-        this.bulls_guess_number()
-        this.cows_guess_number()
+        if(this.#check_string() == false) 
+            return this.#compare_strings()    
+        this.#bulls_guess_number()
+        this.#cows_guess_number()
         return this.result
     }
 }

@@ -12,6 +12,4 @@ form.addEventListener("submit", (event) => {
   const player1Code = Number.parseInt(secretCode.value);
   const player2Guess = Number.parseInt(guess.value);
 
-
-
 });
