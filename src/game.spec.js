@@ -6,13 +6,17 @@ describe("Vacas y toros obtener resultado", () => {
      game = new BullsAndCows()
   });
   it("devuelve ! su el usuario acierta", () => {
-    expect(game.play("2", "2")).toEqual("!");
+    expect(game.play("21", "20")).toEqual("!");
   });
   it("devolvera la misma cantidad de ! que tenga de aciertos",() => {
     expect(game.play("21341", "25948")).toEqual("!!");
   });
   it("devolvera * por cada numero correcto en posición distinta",() => {
     expect(game.play("21345", "27314")).toEqual("!!**");
+  });
+
+  it("devolvera GUESSER WINS(EL ADIVINADOR GANA ) SI LAS CADENAS SON IGUALES",() => {
+    expect(game.play("11111", "11111")).toEqual("GUESSER WINS");
   });
 });
 //  21341 22314 !!****

@@ -6,6 +6,7 @@ class BullsAndCows{
         this.result = ""
     }
 
+
     #check_code_isEqual(index1, index2){
         if(this.hiddenCode[index1] == this.guessedCode[index2]) return true;
     }
@@ -45,6 +46,12 @@ class BullsAndCows{
     {
         this.hiddenCode = player1Code;
         this.guessedCode = player2Guess;
+
+        if (this.hiddenCode == this.guessedCode) {
+           // alert("GUESSER WINS");
+            return "GUESSER WINS";
+        }
+
         if(this.#check_string() == false) 
             return this.#compare_strings();  
         this.#bulls_guess_number();
