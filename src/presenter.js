@@ -3,6 +3,7 @@ import BullsAndCows from "./game";
 let secretCode = document.querySelector("#code");
 let guess = document.querySelector("#codeGuess");
 const registerButton = document.querySelector("#register");
+const checkbox = document.querySelector("#showCode");
 let guessButton = document.querySelector("#guess")
 const resultDiv = document.querySelector("#result")
 
@@ -34,5 +35,15 @@ guessButton.addEventListener("click", (event)=>{
   }
   else{
     alert("Ingrese una adivinanza por favor")
+  }
+})
+
+
+checkbox.addEventListener("click", (event) => {
+  var x = document.getElementById("code");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
   }
 })
