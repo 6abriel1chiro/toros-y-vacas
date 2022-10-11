@@ -72,6 +72,7 @@ describe("obtener terneras y bizontes (veals and bisons)", () => {
   });
   it("devolvera % si hay numeros primos en el codigo secreto ",() => {
     expect(game.lookForBisons("3")).toEqual("%");
+    
   });
 
   });
