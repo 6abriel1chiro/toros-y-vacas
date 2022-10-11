@@ -12,8 +12,8 @@ let game = new BullsAndCows();
 let result = "";
 
 function endGame(result){
-  guessButton.disabled = true;
   if (result == "GUESSER WINS" || result == "Guess limit reached"){
+    guessButton.disabled = true;
     setTimeout(() => {
       document.location.reload();
     }, 3000);
