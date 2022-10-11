@@ -46,6 +46,13 @@ class BullsAndCows{
         }
     }
 
+    #terneraGuessNumber(){
+        this.guessedCode = parseInt(this.guessedCode);
+        this.hiddenCode = parseInt(this.hiddenCode);
+        if (this.hiddenCode == this.guessedCode + 1 || this.hiddenCode == this.guessedCode-1)
+            this.result += "#"
+    }
+
     #processGameResult()
     {
         this.attempts -= 1;
@@ -53,6 +60,7 @@ class BullsAndCows{
             return this.result = this.#compareStringsLength();  
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
+        this.#terneraGuessNumber();
     }
 
     play(player1Code, player2Guess)
