@@ -13,7 +13,7 @@ class BullsAndCows{
     }
 
 
-    #checkCharIsVeal(index1, index2){
+    #checkCharIsDifferentByOne(index1, index2){
 
         const codeToNumber = Number.parseInt(this.hiddenCode[index1]);
         const guessToNumber = Number.parseInt(this.guessedCode[index2]);
@@ -58,7 +58,7 @@ class BullsAndCows{
 
     #vealGuessNumber(){
         for(let i = 0; i<this.guessedCode.length ; i++){
-                if ((this.#checkCharIsVeal(i,i))) {
+                if ((this.#checkCharIsDifferentByOne(i,i))) {
                     this.result += "#";
                 }
             
