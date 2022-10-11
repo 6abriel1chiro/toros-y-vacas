@@ -20,9 +20,6 @@ describe("Vacas y toros obtener resultado", () => {
   });
 
 
-  it("devolvera #  SI el numero difiere en uno del numero del codigo secreto ",() => {
-    expect(game.play("4", "3")).toEqual("#");
-  });
 });
 //  21341 22314 !!****
 
@@ -62,3 +59,19 @@ describe("Limite de intentos Vacas y toros", () =>{
     expect(game.play("21", "20")).toEqual("Guess limit reached");
   });
 });
+
+
+describe("obtener terneras y bizontes (veals and bisons)", () => {
+  let game
+  beforeEach( () => {
+     game = new BullsAndCows()
+  });
+
+  it("devolvera #  SI el numero difiere en uno del numero del codigo secreto ",() => {
+    expect(game.play("4", "3")).toEqual("#");
+  });
+  it("devolvera % si hay numeros primos en el codigo secreto ",() => {
+    expect(game.lookForBisons("3")).toEqual("%");
+  });
+
+  });

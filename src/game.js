@@ -4,6 +4,8 @@ class BullsAndCows{
         this.hiddenCode = ""
         this.guessedCode = ""
         this.result = ""
+        this.primes = ""
+
         this.attempts = 5
     }
 
@@ -20,6 +22,23 @@ class BullsAndCows{
 
 
         if( Math.abs(codeToNumber-guessToNumber)===1) return true;
+    }
+
+
+
+    #checkCharIsPrime(index){
+    const codeToNumber = Number.parseInt(this.hiddenCode[index]);
+
+
+        var sqrtnum=Math.floor(Math.sqrt(codeToNumber));
+        var prime = codeToNumber != 1;
+        for(var i=2; i<sqrtnum+1; i++) { // sqrtnum+1
+            if(codeToNumber % i == 0) {
+                prime = false;
+                break;
+            }
+        }
+        return prime;
     }
     #areStringsEqual(){
         if(this.hiddenCode.length != this.guessedCode.length){
@@ -77,11 +96,26 @@ class BullsAndCows{
 
     }
 
+    lookForBisons(player1Code)
+    {
+        this.hiddenCode = player1Code;
+        this.primes = "";
+        for(let i = 0; i<this.hiddenCode.length ; i++)
+        {
+            if ((this.#checkCharIsPrime(i))) {
+                this.primes += "%";
+            }
+            return this.primes;
+        
+            }       
+    }
+
     play(player1Code, player2Guess)
     {
         this.hiddenCode = player1Code;
         this.guessedCode = player2Guess;
         this.result = "";
+
         if(this.attempts > 0){
 
         if (this.hiddenCode.length === 1 &&  this.guessedCode.length === 1) {
