@@ -54,7 +54,7 @@ class BullsAndCows{
         return parseInt(string);
     }
 
-    #terneraGuessNumber(){
+    #vealGuessNumber(){
         let guessNumber = this.#convertStringToInt(this.guessedCode)
         let hiddenNumber = this.#convertStringToInt(this.hiddenCode)
         if(!isNaN(guessNumber) || !isNaN(hiddenNumber))
@@ -64,7 +64,7 @@ class BullsAndCows{
         }
     }
 
-    #bisonteGuessNumber(){
+    #bisonGuessNumber(){
         for(let i = 0; i<this.#getLenght(this.hiddenCode) ; i++){
             let hiddenNumber = this.#convertStringToInt(this.hiddenCode[i])
             for(let j=2; j <=hiddenNumber; j++){
@@ -83,8 +83,8 @@ class BullsAndCows{
             return this.result = this.#compareStringsLength();  
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
-        this.#terneraGuessNumber();
-        this.#bisonteGuessNumber();
+        this.#vealGuessNumber();
+        this.#bisonGuessNumber();
     }
 
     play(player1Code, player2Guess)
