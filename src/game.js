@@ -47,10 +47,13 @@ class BullsAndCows{
     }
 
     #terneraGuessNumber(){
-        this.guessedCode = parseInt(this.guessedCode);
-        this.hiddenCode = parseInt(this.hiddenCode);
-        if (this.hiddenCode == this.guessedCode + 1 || this.hiddenCode == this.guessedCode-1)
+        let guessNumber = parseInt(this.guessedCode);
+        let hiddenNumber = parseInt(this.hiddenCode);
+        if(!isNaN(guessNumber) || !isNaN(hiddenNumber))
+        {
+            if (hiddenNumber == guessNumber + 1 || hiddenNumber == guessNumber-1)
             this.result += "#"
+        }
     }
 
     #processGameResult()

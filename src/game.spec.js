@@ -37,21 +37,6 @@ describe("Vacas y toros controlar tamaño cadena", () => {
 
 
 describe("Limite de intentos Vacas y toros", () =>{
-  let game
-  beforeEach( () => {
-     game = new BullsAndCows()
-  });
-  it("devolver una # cuando el numero adivinado difiera con uno (suma)",() => {
-    expect(game.play("2", "3")).toEqual("#");
-  });
-  
-  it("devolver una # cuando el numero adivinado difiera con uno (resta)",() => {
-    expect(game.play("3", "2")).toEqual("#");
-  });
-});
-
-
-describe("Terneras segun el numero adivinado", () =>{
   let game = new BullsAndCows();
   it("primer intento", () => {
     expect(game.play("21", "20")).toEqual("!#");
@@ -70,5 +55,24 @@ describe("Terneras segun el numero adivinado", () =>{
   });
   it("limite de intentos alcanzados", () => {
     expect(game.play("21", "20")).toEqual("Guess limit reached");
+  });
+});
+
+
+describe("Terneras segun el numero adivinado", () =>{
+  let game
+  beforeEach( () => {
+     game = new BullsAndCows()
+  });
+  it("devolver una # cuando el numero adivinado difiera con uno (suma)",() => {
+    expect(game.play("2", "3")).toEqual("#");
+  });
+  
+  it("devolver una # cuando el numero adivinado difiera con uno (resta)",() => {
+    expect(game.play("3", "2")).toEqual("#");
+  });
+
+  it("string no deberia devolver ternera",() => {
+    expect(game.play("cadena1", "string2")).toEqual("!");
   });
 });
