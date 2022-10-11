@@ -20,7 +20,7 @@ describe("Vacas y toros obtener resultado", () => {
   });
 
 
-  it("devolvera #  SI el numero difiere en uno del numer del codigo secreto ",() => {
+  it("devolvera #  SI el numero difiere en uno del numero del codigo secreto ",() => {
     expect(game.play("4", "3")).toEqual("#");
   });
 });
