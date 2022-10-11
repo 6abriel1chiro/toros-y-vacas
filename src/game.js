@@ -31,19 +31,23 @@ class BullsAndCows{
     }
 
     #bullsGuessNumber(){
-        for(let i =0; i<this.guessedCode.length ; i++){
+        for(let i =0; i<this.#getLenght(this.hiddenCode) ; i++){
             if (this.#checkCharIsEqual(i,i)) this.result += "!";
         }
     }
 
     #cowsGuessNumber(){
-        for(let i = 0; i<this.guessedCode.length ; i++){
-            for(let j = 0; j<this.guessedCode.length ; j++){
+        for(let i = 0; i<this.#getLenght(this.hiddenCode) ; i++){
+            for(let j = 0; j<this.#getLenght(this.guessedCode) ; j++){
                 if ((this.#checkCharIsEqual(i,j)) && (j != i)) {
                     this.result += "*";
                 }
             }
         }
+    }
+
+    #getLenght(string){
+        return string.length;
     }
 
     #convertStringToInt(string){
@@ -61,7 +65,7 @@ class BullsAndCows{
     }
 
     #bisonteGuessNumber(){
-        for(let i = 0; i<this.hiddenCode.length ; i++){
+        for(let i = 0; i<this.#getLenght(this.hiddenCode) ; i++){
             let hiddenNumber = this.#convertStringToInt(this.hiddenCode[i])
             for(let j=2; j <=hiddenNumber; j++){
                 if(hiddenNumber % j == 0){
