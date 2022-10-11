@@ -34,3 +34,26 @@ describe("Vacas y toros controlar tamaño cadena", () => {
     expect(game.play("21345", "246846851561")).toEqual("la adivinanza es muy larga");
   });
 });
+
+
+describe("Limite de intentos Vacas y toros", () =>{
+  let game = new BullsAndCows();
+  it("primer intento", () => {
+    expect(game.play("21", "20")).toEqual("!");
+  });
+  it("segundo intento", () => {
+    expect(game.play("21", "20")).toEqual("!");
+  });
+  it("tercer intento", () => {
+    expect(game.play("21", "20")).toEqual("!");
+  });
+  it("cuarto intento", () => {
+    expect(game.play("21", "20")).toEqual("!");
+  });
+  it("quinto intento", () => {
+    expect(game.play("21", "20")).toEqual("!");
+  });
+  it("limite de intentos alcanzados", () => {
+    expect(game.play("21", "20")).toEqual("limite de intentos alcanzados");
+  });
+});
