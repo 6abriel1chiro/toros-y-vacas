@@ -27,11 +27,11 @@ describe("Vacas y toros controlar tamaño cadena", () => {
      game = new BullsAndCows()
   });
   it("evitar cadenas de distintos tamaños",() => {
-    expect(game.play("21345", "24")).toEqual("la adivinanza es muy corta");
+    expect(game.play("21345", "24")).toEqual("guess is too short");
   });
   
   it("evitar cadenas de distintos tamaños",() => {
-    expect(game.play("21345", "246846851561")).toEqual("la adivinanza es muy larga");
+    expect(game.play("21345", "246846851561")).toEqual("guess is too long");
   });
 });
 
@@ -54,6 +54,6 @@ describe("Limite de intentos Vacas y toros", () =>{
     expect(game.play("21", "20")).toEqual("!");
   });
   it("limite de intentos alcanzados", () => {
-    expect(game.play("21", "20")).toEqual("limite de intentos alcanzados");
+    expect(game.play("21", "20")).toEqual("Guess limit reached");
   });
 });

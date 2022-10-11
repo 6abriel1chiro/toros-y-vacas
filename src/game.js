@@ -16,14 +16,17 @@ class BullsAndCows{
         if(this.hiddenCode.length != this.guessedCode.length){
             return false
         }
+        else{
+            return true
+        }
     }
 
     #compareStringsLength(){
         if(this.hiddenCode.length > this.guessedCode.length){
-            return "la adivinanza es muy corta"
+            return "guess is too short"
         }
         if(this.hiddenCode.length < this.guessedCode.length){
-            return "la adivinanza es muy larga"
+            return "guess is too long"
         }
     }
 
@@ -65,7 +68,7 @@ class BullsAndCows{
             return this.result;
         }
         else{
-            return "limite de intentos alcanzados";
+            return "Guess limit reached";
         }
     }
 }

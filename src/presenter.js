@@ -11,12 +11,23 @@ const resultDiv = document.querySelector("#result")
 let game = new BullsAndCows();
 let result = "";
 
+function endGame(result){
+  guessButton.disabled = true;
+  if (result == "GUESSER WINS" || result == "Guess limit reached"){
+    setTimeout(() => {
+      document.location.reload();
+    }, 3000);
+  }
+}
+
 registerButton.addEventListener("click", (event) => {
   event.preventDefault();
 
   if (secretCode.value.trim() != ""){
     guessButton.disabled = false;
     guess.disabled = false
+    secretCode.disabled = true;
+    registerButton.disabled = true;
   }
   else{
     alert("Ingrese un codigo por favor")
@@ -32,6 +43,7 @@ guessButton.addEventListener("click", (event)=>{
     let player2Guess = guess.value;
     result = game.play(player1Code, player2Guess);
     resultDiv.innerHTML = "<p>" + "Resultado = " + result + "</p>";
+    endGame(result);
   }
   else{
     alert("Ingrese una adivinanza por favor")
