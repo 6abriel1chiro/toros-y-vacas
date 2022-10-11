@@ -46,11 +46,13 @@ class BullsAndCows{
         }
     }
 
-    
+    #convertStringToInt(string){
+        return parseInt(string);
+    }
 
     #terneraGuessNumber(){
-        let guessNumber = parseInt(this.guessedCode);
-        let hiddenNumber = parseInt(this.hiddenCode);
+        let guessNumber = this.#convertStringToInt(this.guessedCode)
+        let hiddenNumber = this.#convertStringToInt(this.hiddenCode)
         if(!isNaN(guessNumber) || !isNaN(hiddenNumber))
         {
             if (hiddenNumber == guessNumber + 1 || hiddenNumber == guessNumber-1)
@@ -60,7 +62,7 @@ class BullsAndCows{
 
     #bisonteGuessNumber(){
         for(let i = 0; i<this.hiddenCode.length ; i++){
-            let hiddenNumber = parseInt(this.hiddenCode[i]);
+            let hiddenNumber = this.#convertStringToInt(this.hiddenCode[i])
             for(let j=2; j <=hiddenNumber; j++){
                 if(hiddenNumber % j == 0){
                     this.result += "%"
