@@ -18,6 +18,11 @@ describe("Vacas y toros obtener resultado", () => {
   it("devolvera GUESSER WINS(EL ADIVINADOR GANA ) SI LAS CADENAS SON IGUALES",() => {
     expect(game.play("11111", "11111")).toEqual("GUESSER WINS");
   });
+
+
+  it("devolvera #  SI el numero difiere en uno del numer del codigo secreto ",() => {
+    expect(game.play("4", "3")).toEqual("#");
+  });
 });
 //  21341 22314 !!****
 
