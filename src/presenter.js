@@ -4,8 +4,9 @@ let secretCode = document.querySelector("#code");
 let guess = document.querySelector("#codeGuess");
 const registerButton = document.querySelector("#register");
 const checkbox = document.querySelector("#showCode");
-let guessButton = document.querySelector("#guess")
-const resultDiv = document.querySelector("#result")
+let guessButton = document.querySelector("#guess");
+const resultDiv = document.querySelector("#result");
+const AttemptsDiv = document.querySelector("#Attempts");
 
 
 let game = new BullsAndCows();
@@ -28,6 +29,7 @@ registerButton.addEventListener("click", (event) => {
     guess.disabled = false
     secretCode.disabled = true;
     registerButton.disabled = true;
+    AttemptsDiv.innerHTML = "<p>" + "Remaining attempts = " + game.attempts + "/5 </p>";
   }
   else{
     alert("Ingrese un codigo por favor")
@@ -42,7 +44,8 @@ guessButton.addEventListener("click", (event)=>{
     let player1Code = secretCode.value;
     let player2Guess = guess.value;
     result = game.play(player1Code, player2Guess);
-    resultDiv.innerHTML = "<p>" + "Resultado = " + result + "</p>";
+    resultDiv.innerHTML = "<p>" + "Result = " + result + "</p>";
+    AttemptsDiv.innerHTML = "<p>" + "Remaining attempts = " + game.attempts + "/5 </p>";
     endGame(result);
   }
   else{

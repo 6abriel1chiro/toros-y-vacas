@@ -4,7 +4,7 @@ class BullsAndCows{
         this.hiddenCode = ""
         this.guessedCode = ""
         this.result = ""
-        this.tries = 5
+        this.attempts = 5
     }
 
 
@@ -48,7 +48,7 @@ class BullsAndCows{
 
     #processGameResult()
     {
-        this.tries -= 1;
+        this.attempts -= 1;
         if(this.#areStringsEqual() == false) 
             return this.result = this.#compareStringsLength();  
         this.#bullsGuessNumber();
@@ -60,7 +60,7 @@ class BullsAndCows{
         this.hiddenCode = player1Code;
         this.guessedCode = player2Guess;
         this.result = "";
-        if(this.tries > 0){
+        if(this.attempts > 0){
             if (this.hiddenCode == this.guessedCode) {
                 return "GUESSER WINS";
             }
