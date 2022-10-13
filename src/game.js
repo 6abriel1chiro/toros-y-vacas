@@ -93,7 +93,15 @@ class BullsAndCows{
             return "Guess limit reached";
         }
     }
+
+    lookForBisons(secretCode)
+{
+    return "%";
 }
+    
+}
+
+
 export default BullsAndCows;
 
 
