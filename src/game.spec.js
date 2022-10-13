@@ -70,5 +70,8 @@ describe("Terneras devolvera # si el numero es mayor o menor por 1 al codigo sec
   it("ternera deberá devolver # si codigo adivinado es menor por 1",() => {
     expect(game.play("3", "2")).toEqual("#");
   });
+  it("No se deberá devolver ternera",() => {
+    expect(game.play("54", "23")).toEqual("");
+  });
 });
 
