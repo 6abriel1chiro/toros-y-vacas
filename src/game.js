@@ -49,9 +49,13 @@ class BullsAndCows{
         }
     }
 
+    #convertToInt(string){
+        return parseInt(string)
+    }
+
     #vealGuessNumber(){
-        let hiddenNumber = parseInt(this.hiddenCode);
-        let guessedNumber = parseInt(this.guessedCode);
+        let hiddenNumber = this.#convertToInt(this.hiddenCode);
+        let guessedNumber = this.#convertToInt(this.guessedCode);
         if(hiddenNumber+1 == guessedNumber || hiddenNumber-1 == guessedNumber){
             this.result += "#";
         }
@@ -59,7 +63,8 @@ class BullsAndCows{
 
     #bisonGuessNumber(){
         for(let i = 0; i< this.hiddenCode.length; i++){
-            if(primality(parseInt(this.hiddenCode[i])) ==true){
+            let hiddenDigit = this.#convertToInt(this.hiddenCode[i]);
+            if(primality(hiddenDigit) ==true){
                 this.result += "%"
             }
         }
