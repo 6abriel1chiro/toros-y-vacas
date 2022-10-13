@@ -17,5 +17,8 @@
     "babel-jest": "^27.4.6",
     "jest": "^27.4.7",
     "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "primality": "^1.6.1"
   }
 }

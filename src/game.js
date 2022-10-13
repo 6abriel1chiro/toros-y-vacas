@@ -1,3 +1,5 @@
+var primality = require('primality');
+
 class BullsAndCows{
 
     constructor(){
@@ -5,6 +7,7 @@ class BullsAndCows{
         this.guessedCode = ""
         this.result = ""
         this.attempts = 5
+
     }
 
 
@@ -55,7 +58,7 @@ class BullsAndCows{
     }
 
     #bisonGuessNumber(){
-        if (parseInt(this.hiddenCode) % 7==0){
+        if(primality(parseInt(this.hiddenCode)) ==true){
             this.result += "%"
         }
     }
