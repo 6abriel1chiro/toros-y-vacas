@@ -60,7 +60,7 @@ class BullsAndCows{
                 if ((this.#checkCharIsDifferentByOne(i,i))) {
                     this.result += "#";
                 }
-            return   this.result;
+            return this.result;
         }
     }
 

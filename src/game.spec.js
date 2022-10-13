@@ -12,7 +12,7 @@ describe("Vacas y toros obtener resultado", () => {
     expect(game.play("21341", "25948")).toEqual("!!");
   });
   it("devolvera * por cada numero correcto en posición distinta",() => {
-    expect(game.play("21345", "27314")).toEqual("!!**");
+    expect(game.play("21345", "27312")).toEqual("!!**");
   });
 
   it("devolvera GUESSER WINS(EL ADIVINADOR GANA ) SI LAS CADENAS SON IGUALES",() => {
@@ -70,5 +70,7 @@ describe("revision terneras y bisontes", () =>{
     expect(game.play("3", "5")).toEqual("");
   });
 
-
+  it("devuelve # tantas veces como haya terneras", () => {
+    expect(game.play("36", "47")).toEqual("##");
+  });
 });
