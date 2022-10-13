@@ -57,3 +57,15 @@ describe("Limite de intentos Vacas y toros", () =>{
     expect(game.play("21", "20")).toEqual("Guess limit reached");
   });
 });
+
+
+describe("Terneras devolvera # si el numero es mayor o menor por 1 al codigo secreto", () => {
+  let game
+  beforeEach( () => {
+     game = new BullsAndCows()
+  });
+  it("ternera deberá devolver # si codigo adivinado es mayor por 1",() => {
+    expect(game.play("3", "4")).toEqual("#");
+  });
+});
+

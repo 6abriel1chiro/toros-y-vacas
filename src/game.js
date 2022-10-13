@@ -46,6 +46,12 @@ class BullsAndCows{
         }
     }
 
+    #vealGuessNumber(){
+        if(parseInt(this.hiddenCode)+1 == parseInt(this.guessedCode)){
+            this.result += "#"
+        }
+    }
+
     #processGameResult()
     {
         this.attempts -= 1;
@@ -53,6 +59,7 @@ class BullsAndCows{
             return this.result = this.#compareStringsLength();  
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
+        this.#vealGuessNumber();
     }
 
     play(player1Code, player2Guess)
