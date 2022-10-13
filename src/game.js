@@ -47,7 +47,8 @@ class BullsAndCows{
     }
 
     #vealGuessNumber(){
-        if(parseInt(this.hiddenCode)+1 == parseInt(this.guessedCode)){
+        if(parseInt(this.hiddenCode)+1 == parseInt(this.guessedCode) 
+        || parseInt(this.hiddenCode)-1 == parseInt(this.guessedCode)){
             this.result += "#"
         }
     }
