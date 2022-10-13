@@ -60,7 +60,6 @@ class BullsAndCows{
                 if ((this.#checkCharIsDifferentByOne(i,i))) {
                     this.result += "#";
                 }
-            return this.result;
         }
     }
 
@@ -72,6 +71,7 @@ class BullsAndCows{
             return this.result = this.#compareStringsLength();  
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
+        this.#vealsGuessNumber();
 
     }
 
@@ -82,10 +82,6 @@ class BullsAndCows{
         this.guessedCode = player2Guess;
         this.result = "";
         if(this.attempts > 0){
-
-            if (this.hiddenCode.length === 1 &&  this.guessedCode.length === 1) {
-                return this.#vealsGuessNumber();   
-            }
 
             if (this.hiddenCode == this.guessedCode) {
                 return "GUESSER WINS";
