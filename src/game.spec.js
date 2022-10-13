@@ -79,5 +79,9 @@ describe("revision terneras y bisontes", () =>{
     expect(game.lookForBisons("3")).toEqual("%");
   });
 
+  it("devolvera vacio si no  hay numeros primos en el codigo secreto ",() => {
+    expect(game.lookForBisons("15")).toEqual("");
+  });
+
 
 });

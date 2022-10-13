@@ -96,7 +96,25 @@ class BullsAndCows{
 
     lookForBisons(secretCode)
 {
-    return "%";
+let result ="";
+let isPrime = true;
+
+    const number = Number.parseInt(secretCode);
+
+     
+    // looping through 2 to number-1
+    for (let i = 2; i < number; i++) {
+        if (number % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        result +="%";
+    }
+
+    return result;
 }
     
 }
