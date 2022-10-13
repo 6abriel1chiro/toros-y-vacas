@@ -66,4 +66,9 @@ describe("revision terneras y bisontes", () =>{
     expect(game.play("4", "5")).toEqual("#");
   });
 
+  it("devuelve vacio si no es ternera", () => {
+    expect(game.play("3", "5")).toEqual("");
+  });
+
+
 });

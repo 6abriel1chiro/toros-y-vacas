@@ -46,8 +46,21 @@ class BullsAndCows{
         }
     }
 
+
+ 
     #vealGuessNumber(guess){
-        return "#"
+        let codeToNumber;
+        let guessToNumber;
+        for(let i = 0; i<guess.length ; i++){
+        codeToNumber = Number.parseInt(this.hiddenCode[i]);
+        guessToNumber = Number.parseInt(guess[i]);
+            if (( Math.abs(codeToNumber-guessToNumber)===1)  )
+            {
+                this.result += "#";
+            }
+            return this.result;
+        
+    }
 
     }
 
@@ -70,7 +83,7 @@ class BullsAndCows{
         if(this.attempts > 0){
 
             if (this.hiddenCode.length === 1 &&  this.guessedCode.length === 1) {
-                return this.#vealGuessNumber(this.hiddenCode);   
+                return this.#vealGuessNumber(this.guessedCode);   
             }
 
             if (this.hiddenCode == this.guessedCode) {
