@@ -62,6 +62,26 @@ class BullsAndCows{
                 }
         }
     }
+    #checkCharIsPrime(char)
+    {
+        let isPrime = true;
+        let number = Number.parseInt(char);
+        // looping through 2 to number-1
+        for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    
+        if (isPrime) {
+            return true;
+        }
+
+        return isPrime;
+
+    }
+
 
 
     #processGameResult()
@@ -95,27 +115,17 @@ class BullsAndCows{
     }
 
     lookForBisons(secretCode)
-{
-let result ="";
-let isPrime = true;
-
-    const number = Number.parseInt(secretCode);
-
-     
-    // looping through 2 to number-1
-    for (let i = 2; i < number; i++) {
-        if (number % i == 0) {
-            isPrime = false;
-            break;
-        }
+    {
+    let result  = ""
+    for(let i = 0; i<secretCode.length ; i++)
+    {
+            if ( ( this.#checkCharIsPrime(secretCode[i]) ) ) 
+            {
+                result += "%";
+            }
     }
-
-    if (isPrime) {
-        result +="%";
-    }
-
     return result;
-}
+    }
     
 }
 

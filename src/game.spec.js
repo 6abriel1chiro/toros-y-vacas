@@ -80,8 +80,11 @@ describe("revision terneras y bisontes", () =>{
   });
 
   it("devolvera vacio si no  hay numeros primos en el codigo secreto ",() => {
-    expect(game.lookForBisons("15")).toEqual("");
+    expect(game.lookForBisons("44")).toEqual("");
   });
 
+  it("devuelve # tantas veces como haya bisontes", () => {
+    expect(game.lookForBisons("35")).toEqual("%%");
+  });
 
 });
