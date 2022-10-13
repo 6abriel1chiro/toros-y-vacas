@@ -12,7 +12,7 @@ class BullsAndCows{
         if(this.hiddenCode[index1] == this.guessedCode[index2]) return true;
     }
 
-    #areStringsEqual(){
+    #areStringsSameSize(){
         if(this.hiddenCode.length != this.guessedCode.length){
             return false
         }
@@ -55,7 +55,7 @@ class BullsAndCows{
     #processGameResult()
     {
         this.attempts -= 1;
-        if(this.#areStringsEqual() == false) 
+        if(this.#areStringsSameSize() == false) 
             return this.result = this.#compareStringsLength();  
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
