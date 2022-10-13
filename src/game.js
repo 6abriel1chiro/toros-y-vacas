@@ -45,23 +45,23 @@ class BullsAndCows{
             }
         }
     }
+    #checkCharIsDifferentByOne(index1, index2){
+
+        const codeToNumber = Number.parseInt(this.hiddenCode[index1]);
+        const guessToNumber = Number.parseInt(this.guessedCode[index2]);
 
 
- 
-    #vealGuessNumber(guess){
-        let codeToNumber;
-        let guessToNumber;
-        for(let i = 0; i<guess.length ; i++){
-        codeToNumber = Number.parseInt(this.hiddenCode[i]);
-        guessToNumber = Number.parseInt(guess[i]);
-            if (( Math.abs(codeToNumber-guessToNumber)===1)  )
-            {
-                this.result += "#";
-            }
-            return this.result;
-        
+        if( Math.abs(codeToNumber-guessToNumber)===1) return true;
     }
 
+ 
+    #vealsGuessNumber(){
+        for(let i = 0; i<this.guessedCode.length ; i++){
+                if ((this.#checkCharIsDifferentByOne(i,i))) {
+                    this.result += "#";
+                }
+            return   this.result;
+        }
     }
 
 
@@ -72,6 +72,7 @@ class BullsAndCows{
             return this.result = this.#compareStringsLength();  
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
+
     }
 
 
@@ -83,7 +84,7 @@ class BullsAndCows{
         if(this.attempts > 0){
 
             if (this.hiddenCode.length === 1 &&  this.guessedCode.length === 1) {
-                return this.#vealGuessNumber(this.guessedCode);   
+                return this.#vealsGuessNumber();   
             }
 
             if (this.hiddenCode == this.guessedCode) {
