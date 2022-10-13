@@ -21,7 +21,7 @@ class BullsAndCows{
         }
     }
 
-    #compareStringsLength(){
+    #verifyStringsLength(){
         if(this.hiddenCode.length > this.guessedCode.length){
             return "guess is too short"
         }
@@ -88,13 +88,12 @@ class BullsAndCows{
     {
         this.attempts -= 1;
         if(this.#areStringsSameSize() == false) 
-            return this.result = this.#compareStringsLength();  
+            return this.result = this.#verifyStringsLength();  
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
         this.#vealsGuessNumber();
 
     }
-
 
     play(player1Code, player2Guess)
     {
