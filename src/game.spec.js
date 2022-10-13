@@ -57,3 +57,13 @@ describe("Limite de intentos Vacas y toros", () =>{
     expect(game.play("21", "20")).toEqual("Guess limit reached");
   });
 });
+
+
+
+describe("revision terneras y bisontes", () =>{
+  let game = new BullsAndCows();
+  it("devuelve una ternera #", () => {
+    expect(game.play("4", "5")).toEqual("#");
+  });
+
+});
