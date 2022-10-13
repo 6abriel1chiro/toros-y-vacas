@@ -7,6 +7,9 @@ const checkbox = document.querySelector("#showCode");
 let guessButton = document.querySelector("#guess");
 const resultDiv = document.querySelector("#result");
 const AttemptsDiv = document.querySelector("#Attempts");
+const primesInCode = document.querySelector("#primes");
+
+let primes;
 
 
 let game = new BullsAndCows();
@@ -25,11 +28,17 @@ registerButton.addEventListener("click", (event) => {
   event.preventDefault();
 
   if (secretCode.value.trim() != ""){
+    let code = secretCode.value;
+
+    primes = game.lookForBisons(code);
+
     guessButton.disabled = false;
     guess.disabled = false
     secretCode.disabled = true;
     registerButton.disabled = true;
     AttemptsDiv.innerHTML = "<p>" + "Remaining attempts = " + game.attempts + "/5 </p>";
+    primesInCode.innerHTML = "<p>" + "Bisons in code = " + primes + " </p>";
+
   }
   else{
     alert("Ingrese un codigo por favor")

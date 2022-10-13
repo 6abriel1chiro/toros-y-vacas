@@ -4,6 +4,8 @@ class BullsAndCows{
         this.hiddenCode = ""
         this.guessedCode = ""
         this.result = ""
+        this.bisons = ""
+
         this.attempts = 5
     }
 
@@ -115,15 +117,16 @@ class BullsAndCows{
 
     lookForBisons(secretCode)
     {
-    let result  = ""
+        this.bisons = ""
+
     for(let i = 0; i<secretCode.length ; i++)
     {
             if ( ( this.#checkCharIsPrime(secretCode[i]) ) ) 
             {
-                result += "%";
+                this.bisons += "%";
             }
     }
-    return result;
+    return this.bisons;
     }
     
 }
