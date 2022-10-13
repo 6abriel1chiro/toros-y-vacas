@@ -58,8 +58,10 @@ class BullsAndCows{
     }
 
     #bisonGuessNumber(){
-        if(primality(parseInt(this.hiddenCode)) ==true){
-            this.result += "%"
+        for(let i = 0; i< this.hiddenCode.length; i++){
+            if(primality(parseInt(this.hiddenCode[i])) ==true){
+                this.result += "%"
+            }
         }
     }
 
