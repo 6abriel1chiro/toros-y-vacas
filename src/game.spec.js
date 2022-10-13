@@ -6,7 +6,7 @@ describe("Vacas y toros obtener resultado", () => {
      game = new BullsAndCows()
   });
   it("devuelve ! su el usuario acierta", () => {
-    expect(game.play("21", "20")).toEqual("!#");
+    expect(game.play("23", "20")).toEqual("!");
   });
   it("devolvera la misma cantidad de ! que tenga de aciertos",() => {
     expect(game.play("21341", "25948")).toEqual("!!");
@@ -39,22 +39,22 @@ describe("Vacas y toros controlar tamaño cadena", () => {
 describe("Limite de intentos Vacas y toros", () =>{
   let game = new BullsAndCows();
   it("primer intento", () => {
-    expect(game.play("21", "20")).toEqual("!#");
+    expect(game.play("19", "20")).toEqual("#");
   });
   it("segundo intento", () => {
-    expect(game.play("21", "20")).toEqual("!#");
+    expect(game.play("19", "20")).toEqual("#");
   });
   it("tercer intento", () => {
-    expect(game.play("21", "20")).toEqual("!#");
+    expect(game.play("19", "20")).toEqual("#");
   });
   it("cuarto intento", () => {
-    expect(game.play("21", "20")).toEqual("!#");
+    expect(game.play("19", "20")).toEqual("#");
   });
   it("quinto intento", () => {
-    expect(game.play("21", "20")).toEqual("!#");
+    expect(game.play("19", "20")).toEqual("#");
   });
   it("limite de intentos alcanzados", () => {
-    expect(game.play("21", "20")).toEqual("Guess limit reached");
+    expect(game.play("19", "20")).toEqual("Guess limit reached");
   });
 });
 
@@ -72,6 +72,16 @@ describe("Terneras devolvera # si el numero es mayor o menor por 1 al codigo sec
   });
   it("No se deberá devolver ternera",() => {
     expect(game.play("54", "23")).toEqual("");
+  });
+});
+
+describe("Bisontes devolvera % si el codigo secreto tiene un numero primo", () => {
+  let game
+  beforeEach( () => {
+     game = new BullsAndCows()
+  });
+  it("ternera deberá devolver # si codigo adivinado es mayor por 1",() => {
+    expect(game.play("7", "0")).toEqual("%");
   });
 });
 

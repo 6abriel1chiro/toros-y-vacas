@@ -47,9 +47,16 @@ class BullsAndCows{
     }
 
     #vealGuessNumber(){
-        if(parseInt(this.hiddenCode)+1 == parseInt(this.guessedCode) 
-        || parseInt(this.hiddenCode)-1 == parseInt(this.guessedCode)){
-            this.result += "#"
+        let hiddenNumber = parseInt(this.hiddenCode);
+        let guessedNumber = parseInt(this.guessedCode);
+        if(hiddenNumber+1 == guessedNumber || hiddenNumber-1 == guessedNumber){
+            this.result += "#";
+        }
+    }
+
+    #bisonGuessNumber(){
+        if (parseInt(this.hiddenCode) % 7==0){
+            this.result += "%"
         }
     }
 
@@ -61,6 +68,7 @@ class BullsAndCows{
         this.#bullsGuessNumber();
         this.#cowsGuessNumber();
         this.#vealGuessNumber();
+        this.#bisonGuessNumber();
     }
 
     play(player1Code, player2Guess)
