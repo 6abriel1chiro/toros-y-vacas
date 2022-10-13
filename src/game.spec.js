@@ -73,4 +73,11 @@ describe("revision terneras y bisontes", () =>{
   it("devuelve # tantas veces como haya terneras", () => {
     expect(game.play("36", "47")).toEqual("##");
   });
+  // we ccheck is there are any prime numbers in the hidden code ., further we will show the number of primes next to the result
+
+  it("devolvera % si hay numeros primos en el codigo secreto ",() => {
+    expect(game.lookForBisons("3")).toEqual("%");
+  });
+
+
 });
